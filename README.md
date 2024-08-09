@@ -1,114 +1,58 @@
-# Make your own Codewars Style Challenge
+# Statistics Dojo! 🥷
 
-In this workshop, you'll create your own programming challenge for others to solve, similar to the ones you might have tackled on Codewars. You'll write unit tests to validate solutions. Then you can share your challenge with other bootcampers for them to solve. If a submitted solution passes all your tests, it will be considered a correct solution - just like on Codewars. This is a great chance to get creative and come up with a programming challenge to stump your peers!
+## Welcome to the Statistics dojo!
 
-## 💡 OBJECTIVES FOR THE WORKSHOP
+So, you wish to master the martial art of STATISTIC do you?
 
-Here's a glimpse of what you'll be achieving by the end of this workshop:
+Well, your training is about to begin...
 
-- Clearly describing a problem/task that you want others to solve
-- Writing unit tests to check whether their solution to your task is correct
-- Present your project plan, story, and anything else you feel supports your creation process and final outcome in a document
+You will face four challengers which will increase in difficulty.
 
-## 🎟️ TICKETS
+_For all of the challenges below you must throw an error ("Must be an array of numbers") if the input is not an array and the array does not only contain numbers_
 
-Time to dive into action! 🏊‍♂️ Here's what you'll be working on:
+### -- Challenge One --
 
-### 🎫 Ticket 1 - Setup
+Create a function that takes in an array of numbers and returns the mean (average) of those numbers.
 
-Install Vitest and optionally set up an NPM `test` script that conveniently runs your tests.
+** Example **<br>
+`[10, 4, 6, 9, 20] --> 9.8`
 
-You will be making one kata each, but you will be in development teams. The aim is to co-elevate each other. There are several ways you can and should look to help each other:
+### -- Challenge Two --
 
-- Brainstorming: Helping each make your ideas better, and giving feedback to each other to add different perspectives and improve the end product
-- Planning: You can help validate each others plans, and sense check in a team review the direction of your products
-- Check-ins: Regular team stand-ups / check-ins will help make sure you are building and making progress together
-- Support: You should aim to help each other overcome issues if one of your team is stuck and cannot Google their way out of it
-- Testing: You can act as a first line user test for each others katas. You might find it a good idea to book in regular checkpoints to demo to each other and get initial feedback in quick bursts, making sure you can build in and adapt to any useful feedback before official release of your katas
+Create a function that takes in an array of numbers and returns the median (the middle number in a sorted list of numbers) of those numbers.
+If the array contains an even amount of numbers, it should return the average of the two middle numbers
 
-### 🎫 Ticket 2 - Plan your kata
+** Example **<br>
+`[10, 4, 6, 9, 20] --> 9`
 
-Attack this as you would any other problem - plan, plan, plan and use our agile approach to create steps that allow you to build MVPs and incrementally reach your stretch goals. Brainstorm options with a technique like Disney Ideation. Once you have a compelling challenge and story idea, start breaking it down. Think about the goals of your challenge, and the scenarios you could provide to test if people have reached those goals. Provide any examples or additional details that are necessary for someone taking on your kata to understand the problem, but don't give away so much that it removes the challenge. You want to strike a balance - not too vague but not spoon-feeding the solution either.
+### -- Challenge Three --
 
-Write your kata's scenario in a comment in `main.js` and include the start of an exported function that your audience will use to solve it (like you've seen on the katas you've done before). If it's useful to see an example:
+Create a function that takes in an array of numbers and returns the range (difference between the highest and lowest number) of those numbers.
 
-```js
-/**
- * Hello challenger! Your task is to write a function named `transformLength` which takes in a string and returns 1 if the length of the string is even and otherwise -1.
- *
- * Your implementation should handle strings whose length is between 0 (inclusive) and 2500 (inclusive).
- *
- * A few examples:
- *    `transformLength("table")` should return -1 as the length of "table" is not even
- *    `transformLength("wizard")` should return 1 as the length of "wizard" is even
- */
-export function transformLength(string) {
-  // Good luck!
-}
-```
+** Example **<br>
+`[10, 4, 6, 9, 20] --> 16`
 
-ℹ️ The reason for leaving the function body empty is that you want the people solving your kata to write their own implementation from scratch. Your role is to provide the overall problem statement and function skeleton. The solving and coding is up to them! Leaving an incomplete skeleton function helps point them in the right direction without giving away a full working solution.
+### -- Challenge Four --
 
-### 🎫 Ticket 3 - Write your kata
+Create a function that combines the work you've done above. It should take in an array of numbers and return an object that contains the
+mean,median and range of those numbers
 
-When drafting your test cases, consider the different inputs that could be passed to the solution function and any edge cases you want to account for. You could put into practice tools such as Equivalency Partitioning, Boundary Value Analysis, and Decision Tables if its useful. Think of test values that will thoroughly cover the expected functionality. The number of tests is up to you, but aim for sufficient coverage to validate correctness.
+** Example **<br>
+`[10, 4, 6, 9, 20] --> {
+mean: 9.8,
+median: 9,
+range: 16
+}`
 
-Since you'll write tests before seeing people's solutions, focus on defining expected outputs for given inputs, without assumptions about how people actually wrote the code. You're testing for outcomes. You could follow a TDD workflow - write a failing test, then temporarily add code to pass it. Just be sure to remove the solution code before sharing the kata. This helps ensure your tests fail when logic is missing or incorrect and pass when implemented properly.
+### Set up
 
-If it's useful to see an example (continuing the `checkLength` example from earlier):
+- Clone the repo from github
+- Run `npm install` to install vitest
+- Run `npm test` to start the test suite
+- Code away and try to pass the test!
 
-```js
-import { test, expect } from "vitest";
-import { checkLength } from "./main.js";
+You've got this!
 
-test("should return -1 for strings with an odd length", () => {
-  const expected = -1;
-  const actual = checkLength("table");
-  expect(actual).toBe(expected);
-});
+### The plan
 
-test("should return 1 for strings with an even length", () => {
-  const expected = 1;
-  const actual = checkLength("wizard");
-  expect(actual).toBe(expected);
-});
-```
-
-🎯 At this stage you should have a description of the problem in `main.js` and some tests in `main.test.js`.
-
-### 🎫 Ticket 4 - Check your tests
-
-To verify your tests, temporarily add a working implementation to the solution function in `main.js`. Check that the tests fail before implementation and pass when the function is coded correctly. This validates that your tests accurately check for both incorrect and correct solutions. Remember to remove the solution code afterwards before sharing the kata.
-
-If it's useful to see an example (continuing the `checkLength` example from earlier):
-
-```js
-export function checkLength(string) {
-  // Temporarily added the line below to check if tests pass, but will remove it before committing and pushing.
-  return string.length % 2 === 0 ? 1 : -1;
-}
-```
-
-### 🎫 Ticket 5 - Share your kata
-
-Before pushing your final kata repository, be sure to remove any solution code you added for test validation. You want to provide only the kata description, skeleton function, and test cases - no actual solutions. Once ready, share your repo link in the [learn.schoolofcode.co.uk Hackathon Channel](https://learn.schoolofcode.co.uk/path-player?courseid=bc17-qe&unit=66acf966524bf23f05018063Unit) so other bootcampers can find it, clone it, implement solutions, and run your tests to check their progress. This allows them to solve the programming challenge you've created!
-
-Share it with following format:
-
-```
-Room: REPLACE_ME_WITH_YOUR_ROOM_NUMBER
-Name: REPLACE_ME_WITH_YOUR_NAME
-Link: REPLACE_ME_WITH_A_LINK_TO_YOUR_PUBLIC_GITHUB_REPO_CONTAINING_THE_KATA
-Overview: REPLACE_ME_WITH_A_BRIEF_DESCRIPTION_OF_WHAT_YOUR_KATA_IS_ABOUT
-```
-
-If it's not public already, remember to change the visibility of your repository to public.
-
-### 🎫 Ticket 6 - Present you kata
-
-Make sure you present your project in the markdown file - this will be assessed alongside your actual kata. Treat this as an asynchronous presentation - anything you would want to talk through (plans, brainstorming, final results, user feedback, etc) should go in here.
-
-### 🎫 Ticket 7 - Complete katas from others
-
-To solve katas created by other bootcampers, first clone their repository using the shared link. `cd` into the folder, run `npm install` to get the dependencies, then implement a solution in main.js. Execute their test cases to validate your code against their requirements. Provide feedback on the clarity of their instructions, difficulty level, and effectiveness of the tests. Engaging with each other's challenges allows everyone to learn. Make sure to critique respectfully - creating a programming challenge is difficult!
-
+Refer to "plan.md" for the plan
