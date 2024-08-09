@@ -5,8 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "vitest": "npx vitest"
+    "test": "npx vitest"
   },
   "author": "School of Code",
   "license": "ISC",

@@ -4,6 +4,9 @@ Welcome to the Statistics dojo!
 
 Your training is about to begin...
 You will face four challengers which will increase in difficulty.
+
+For all of the challenges below you must throw an error if the input is not an array and the array does not only contain numbers
+
 -- Challenge One --
 Create a function that takes in an array of numbers and returns the mean (average) of those numbers.
 ** Example **
