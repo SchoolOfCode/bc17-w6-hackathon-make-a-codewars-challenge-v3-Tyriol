@@ -1,4 +1,4 @@
-# Statistics Dojo!
+# Statistics Dojo! 🥷
 
 ## Welcome to the Statistics dojo!
 
