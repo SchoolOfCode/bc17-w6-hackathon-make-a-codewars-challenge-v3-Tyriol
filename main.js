@@ -35,22 +35,50 @@ range: 16
 
 */
 
+const isArrayOfNumbers = (array) => {
+  if (!Array.isArray(array)) return false
+  if (array.length === 0) return false
+  if (array.find(val => !Number.isInteger(val))) return false
+  return true
+}
+
 // Round 1: Mean function
 export function calculateMean(array) {
-  // Ready...fight!
+  if (!isArrayOfNumbers(array)) throw new Error('Must be an array of numbers')
+
+  return array.reduce((acc, val) => acc + val, 0) / array.length
 }
 
 // Round 2: Median function
 export function calculateMedian(array) {
-  // Ready...fight!
+  if (!isArrayOfNumbers(array)) throw new Error('Must be an array of numbers')
+
+  const sortedArray = array.toSorted((a, b) => a - b)
+  if (sortedArray.length % 2 === 1) {
+    const middleIndex = Math.floor(sortedArray.length / 2)
+    return sortedArray[middleIndex]
+  }
+
+  const middleIndex = sortedArray.length / 2;
+  return calculateMean([sortedArray[middleIndex], sortedArray[middleIndex - 1]])
 }
 
 // Round 3: Range function
 export function calculateRange(array) {
-  // Ready...fight!
+  if (!isArrayOfNumbers(array)) throw new Error('Must be an array of numbers')
+
+  const sortedArray = array.toSorted((a, b) => a - b)
+  const min = sortedArray[0]
+  const max = sortedArray[sortedArray.length - 1]
+
+  return max - min
 }
 
 // Round 4: Mean, median and range object funtion
 export function calculateMeanMedianRange(array) {
-  // Ready...fight!
+  return {
+    mean: calculateMean(array),
+    median: calculateMedian(array),
+    range: calculateRange(array)
+  }
 }
